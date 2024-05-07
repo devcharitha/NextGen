@@ -2,15 +2,24 @@
 /* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
 * {
   font-family: Poppins, "sans-serif";
+  margin: 0;
+  padding: 0;
 }
-.login-page {
-  background-image: linear-gradient(rgb(0 0 0 / 75%), rgb(0 0 0 / 75%)),
-    url("/assets/images/bg-img.jpg");
-  background-size: auto;
+/* .login-page {
+  background-image: 
+    url("/assets/images/background-img.jpg");
+  background-size: cover;
   height: 100vh;
   background-repeat: no-repeat;
-}
+} */
 
+.backgr{
+  background-image: 
+  url("/assets/images/background-img.jpg");
+background-size: cover;
+height: 100vh;
+background-repeat: no-repeat;
+}
 .nav-link {
   color: white;
 }
