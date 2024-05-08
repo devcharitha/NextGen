@@ -1,0 +1,26 @@
+<form class="formclass">
+      <h3 class="sign-in">Sign In</h3>
+      <div class="email-id mb-3">
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter Email"
+          aria-describedby="emailHelp"
+        />
+        <div class="error1"><small class="error">Invalid Email ID</small></div>
+      </div>
+      <div class="pwd mb-3">
+        <input
+          type="password"
+          class="form-control"
+          id="password"
+          placeholder="Enter Password"
+        />
+        <div class="error1"><small class="error">Invalid Password</small></div>
+
+      </div>
+      {{!-- <button type="submit" class="btn btn-primary">Sign In</button> --}}
+      <LinkTo @route="dashboard" class="btn btn-primary">Sign In</LinkTo>
+      <div id="emailHelp" class="form-text"><p>Forgot password</p></div>
+    </form>
