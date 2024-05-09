@@ -1,0 +1,9 @@
+{
+    "customerDetails":{
+        "emailId":"nihar@example.com",
+        "accountNumber": 1234567890,
+        "siteAddress": "123 Main St",
+        "billAmount": 1000,
+        "listOfAppliances":["Fridge","AC","Cooker"]
+    }
+}

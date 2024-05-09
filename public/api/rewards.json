@@ -1,0 +1,8 @@
+{
+    "rewards":{
+        "accountNumber": 1234567890,
+        "rewardPoints":100,
+        "energyQuiz": 20,
+        "energyTraining":3
+    }
+}

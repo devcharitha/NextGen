@@ -1,0 +1,8 @@
+{
+    "consumptionDetail":{
+        "accountNumber": 1234567890,
+        "presentConsumption": 100,
+        "consumptionInMonth": 20,
+        "carbonFootprint": 1000
+    }
+}

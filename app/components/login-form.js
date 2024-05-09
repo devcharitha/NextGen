@@ -2,46 +2,38 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-import { validator, buildValidations} from '@ember-cp-validation';
 
-const Validations = buildValidations({
-    email:{
-        description: 'Email',
-        validators: [
-            validator('presence', true),
-            validator('format',{
-                regex:/^[a-zA-Z0-9. _%+-]+@[a-zA-Z0-9. -]+\\. [a-zA-Z]{2,}$/,
-                message:'Invalid format'
-            })
-        ]
-    },
-    password:{
-        description: 'Password',
-        validators: [
-            validator('presence', true),
-            validator('format',{
-                regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\S+$).{8,}$/,
-                message:'Invalid format'
-            })
-        ]
+export default class LoginFormComponent extends Component {
+  @service router;
+  @tracked emailError;
+  @tracked passwordError;
+  @tracked email;
+  @tracked password;
+  @tracked errorMessage;
+
+  @action
+  async signIn(event) {
+    event.preventDefault();
+
+    console.log(this.email);
+    console.log(this.password);
+
+    if (!this.email) {
+      this.emailError = 'invalid';
+      setTimeout(() => {
+        this.emailError = '';
+      }, 3000);
+      return;
     }
-});
-export default class LoginFormComponent extends Component.extend(Validations){
-    @service router;
-    @tracked email;
-    @tracked password;
-    @tracked errorMessage= '';
+    if (!this.password) {
+      // console.log("No password");
+      this.passwordError = 'invalid password';
 
-    @action
-    async signIn(){
-        if(this.validations.isValid){
-            this.router.transitionTo('dashboard');
-        }else{
-            this.errorMessage = "Can't sign in"
-
-            setTimeout(() =>{
-                this.errorMessage='';
-            },3000);
-        }
+      setTimeout(() => {
+        this.passwordError = '';
+      }, 3000);
+      return;
     }
+    this.router.transitionTo('dashboard');
+  }
 }
