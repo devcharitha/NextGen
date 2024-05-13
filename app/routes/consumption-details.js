@@ -5,5 +5,6 @@ export default class ConsumptionDetailsRoute extends Route {
     let response = await fetch('/api/consumption-details.json');
     let data = await response.json();
     return data;
+    // console.log(data);
   }
 }

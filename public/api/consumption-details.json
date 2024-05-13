@@ -2,7 +2,17 @@
     "consumptionDetail":{
         "accountNumber": 1234567890,
         "presentConsumption": 100,
-        "consumptionInMonth": 20,
-        "carbonFootprint": 1000
+        "consumptionInMonth":{
+            "jan":50,
+            "feb":60,
+            "mar":70,
+            "apirl":80
+        },
+        "carbonFootprint":{
+            "jan":10,
+            "feb":12,
+            "mar":14,
+            "apirl":18
+        }
     }
 }
