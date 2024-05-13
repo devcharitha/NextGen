@@ -1,10 +1,42 @@
 {{page-title "Dashboard"}}
-{{outlet}}
-{{page-title "Dashboard"}}
-{{outlet}}
-<nav class="navbar-main">
-  <h3>Navbar</h3>
-</nav>
-<div class="dashboard">
-  <h2 class="db">Dashboard</h2>
+<div class="dashboard-page">
+<nav class="navbar-main ">
+      <Dash-navbar />
+    </nav>
+  <div class="container">
+    
+    <div class="dashboard mt-1">
+      <h2 class="db">Dashboard</h2>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <Readings />
+      </div>
+      <div class="col-4">
+        <Address />
+      </div>
+      <div class="col-4">
+        <Account />
+      </div>
+    </div>
+    <div class="row">
+      <div class="consumption-graph col-4">
+        <Consumption-graph />
+      </div>
+      <div class="carbon-graph col-4">
+        <Carbon-graph />
+      </div>
+      <div class="footprint-graph col-4">
+        <Carbon-calc />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <Appliances/>
+      </div>
+      <div class="col-4">
+        <Reward />
+      </div>
+    </div>
+  </div>
 </div>

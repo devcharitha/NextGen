@@ -2,16 +2,18 @@
       <h3 class="sign-in">Sign In</h3>
       <div class="email-id mb-3">
         <input
+          {{on "input" this.updateEmailId}}
+          value="{{this.emailId}}"
           type="email"
           class="form-control"
-          id="email"
           placeholder="Enter Email"
           aria-describedby="emailHelp"
         />
-        <div class="error1"><small class="error">Invalid Email ID</small></div>
+        <div class="error1"><small class="error">Invalid Email ID </small></div>
       </div>
       <div class="pwd mb-3">
         <input
+          {{on "input" this.updatePassword}}
           type="password"
           class="form-control"
           id="password"

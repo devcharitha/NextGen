@@ -1,6 +1,125 @@
-.navbar-main h3{
-    background-color: rgb(247, 19, 19);
+.dashboard-page {
+  min-height: 100vh;
+
+  /* background: linear-gradient(
+    90deg,
+    rgb(67 141 232 / 71.9%) 0%,
+    rgba(0, 213, 255, 0.429) 100%
+  ); */
+  background: linear-gradient(
+    90deg,
+    rgb(135 139 143 / 52.1%) 0%,
+    rgb(178 183 184 / 53%) 100%
+  );
 }
+
+.navbar-main h3 {
+  background-color: rgb(255 252 252);
+}
+
 .dashboard {
-    font-weight: bold;
+  font-weight: bold;
+}
+
+.reading {
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+  margin-bottom: 2rem;
+}
+
+.img {
+  width: 74px;
+  padding: 10px;
+}
+
+.address {
+  background-color: white;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+}
+
+.numbers {
+  align-items: center;
+}
+
+.kwh {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: black;
+}
+
+.day {
+  margin-top: 8px;
+  margin-left: 5px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.user-details {
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.street-name {
+  margin-top: 8px;
+  margin-left: 5px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.account {
+  background-color: white;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+}
+
+.acc {
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.acc-num {
+  margin-top: 8px;
+  margin-left: 5px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.footprint {
+  border: solid rgb(252 252 252);
+  height: 100%;
+  background-color: white;
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+}
+
+.per-day-reading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bulb-icon {
+  color: white;
+}
+
+.carbon-img {
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+}
+
+.watt-reating {
+  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
+}
+
+.calc-btn {
+  border: solid 1px rgb(10 180 219 / 88.6%);
+  border-radius: 4px;
+  background-color: rgb(10 180 219 / 88.6%);
+  padding: 10px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+}
+
+.note {
+  padding: 20px;
 }
