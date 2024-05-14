@@ -6,10 +6,12 @@
 @import url("appliances.css");
 @import url("reward.css");
 @import url("navbar-main.css");
+@import url("dropdown.css");
+
 
 * {
   font-family: Arial, Helvetica, sans-serif;
-  padding: 0;
+  padding-left : 0 !important;
   margin: 0;
   box-sizing: border-box;
 }

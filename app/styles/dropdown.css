@@ -1,0 +1,11 @@
+.dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0%;
+    background-color: dimgrey;
+    padding: 0.75rem;
+    box-shadow: 0 2px 5px 0 black;
+}
