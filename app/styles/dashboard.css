@@ -1,0 +1,106 @@
+.dashboard-page {
+  min-height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgb(135 139 143 / 52.1%) 0%,
+    rgb(178 183 184 / 53%) 100%
+  );
+}
+
+.navbar-main h3 {
+  background-color: rgb(255 252 252);
+}
+
+.dashboard {
+  font-weight: bold;
+}
+
+.reading {
+  background-color: white;
+  color: black;
+  margin-bottom: 1rem;
+}
+
+.img {
+  width: 74px;
+  padding: 10px;
+}
+
+.address {
+  background-color: white;
+}
+
+.numbers {
+  align-items: center;
+}
+
+.kwh {
+  font-size: 1.5rem;
+  margin-top: 20px;
+  color: black;
+}
+
+.day {
+  margin-top: 8px;
+  margin-left: 5px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.user-details {
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.street-name {
+  margin-top: 8px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.account {
+  background-color: white;
+}
+
+.acc {
+  margin-top: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.acc-num {
+  margin-top: 8px;
+  margin-left: 5px;
+  color: rgb(0 0 0);
+  font-size: 0.8rem;
+}
+
+.footprint {
+  border: solid rgb(252 252 252);
+  height: 100%;
+  background-color: white;
+}
+
+.per-day-reading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.bulb-icon {
+  color: white;
+}
+
+.calc-btn {
+  border: solid 1px rgb(10 180 219 / 88.6%);
+  border-radius: 4px;
+  background-color: rgb(10 180 219 / 88.6%);
+  padding: 10px;
+  margin-left: 50px;
+  text-decoration: none;
+  color: rgb(0 0 0);
+}
+
+.note {
+  padding: 20px;
+}

@@ -1,33 +1,38 @@
 {{page-title "Dashboard"}}
-{{outlet}}
-<nav class="navbar navbar-expand-lg bg-body-white">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-
-        </li>
-        <li class="nav-item">
-          <div class="dropdown">
-            <a
-              class="btn btn-secondary dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown link
-            </a>
-
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-        </li>
-
-      </ul>
+<div class="dashboard-page">
+<nav class="navbar-main ">
+      <Dash-navbar />
+    </nav>
+  <div class="container">
+    <div class="row mt-2">
+      <div class="col-4">
+        <Readings />
+      </div>
+      <div class="col-4">
+        <Address />
+      </div>
+      <div class="col-4">
+        <Account />
+      </div>
+    </div>
+    <div class="row">
+      <div class="consumption-graph col-4">
+        <Consumption-graph />
+      </div>
+      <div class="carbon-graph col-4">
+        <Carbon-graph />
+      </div>
+      <div class="footprint-graph col-4">
+        <Carbon-calculator />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-8">
+        <Appliances />
+      </div>
+      <div class="col-4">
+        <Reward /> 
+      </div>
     </div>
   </div>
-</nav>
+</div>

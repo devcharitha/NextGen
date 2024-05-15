@@ -1,0 +1,30 @@
+.activity-heading {
+  background-color: rgb(10 180 219 / 88.6%);
+  border-radius: 8px 8px 0 0;
+}
+
+.summary-heading {
+  background-color: rgb(10 180 219 / 88.6%);
+  border-radius: 7px 7px 0 0 !important;
+}
+
+.dollar {
+  margin-left: 190px;
+}
+
+.point {
+  margin-left: 215px;
+}
+
+.energy-point {
+  margin-left: 190px;
+}
+
+.reward {
+  background-color: white;
+}
+
+.activities {
+  background-color: white;
+  border-radius: 7px;
+}

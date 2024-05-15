@@ -1,6 +1,7 @@
 # compiled output
 /dist/
 /declarations/
+/tests/
 
 # dependencies
 /node_modules/
@@ -20,6 +21,9 @@
 /package.json.ember-try
 /package-lock.json.ember-try
 /yarn.lock.ember-try
+/package-lock.json
+
+
 
 # broccoli-debug
 /DEBUG/

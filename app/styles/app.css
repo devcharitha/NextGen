@@ -1,18 +1,23 @@
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
-/* Ember supports plain CSS out of the box. More info: https://cli.emberjs.com/release/advanced-use/stylesheets/ */
+@import url("~bootstrap/dist/css/bootstrap.min.css");
+@import url("dashboard.css");
+@import url("appliances.css");
+@import url("reward.css");
+@import url("navbar-main.css");
+@import url("dropdown.css");
+
 * {
-  font-family: Poppins, "sans-serif";
-}
-.login-page {
-  background-image: linear-gradient(rgb(0 0 0 / 75%), rgb(0 0 0 / 75%)),
-    url("/assets/images/bg-img.jpg");
-  background-size: auto;
-  height: 100vh;
-  background-repeat: no-repeat;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 0 !important;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.nav-link {
-  color: white;
+.login-page {
+  background-image: linear-gradient(rgb(0 0 0 / 75%), rgba(39, 38, 38, 0.75)),
+    url("/assets/images/bg-image.jpg");
+  background-size: cover;
+  height: 100vh;
+  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -27,32 +32,23 @@
   border-radius: 4px;
   margin-left: 10%;
   margin-top: 8%;
-
-  /* padding: 25px 025px 25px 25px */
   padding: 1%;
   text-align: center;
 }
 
 .welcome-txt {
-  /* padding: 10px; */
   margin: 10%;
   color: white;
-  font-weight: bold;
 }
 
 .btn {
   width: 85%;
-
-  /* margin: 10px 10px 20px 55px; */
-
-  /* margin-bottom: 10px; */
   margin-bottom: 4%;
   margin-top: 2%;
   background: linear-gradient(rgb(53 81 152), rgb(255 255 255 / 0%));
 }
 
 .email-id {
-  /* width: 0%; */
   margin: 10px 10px 20px 25px;
   padding-right: 20px;
 }
@@ -63,32 +59,13 @@
 }
 
 .sign-in {
-  /* margin: 20px 10px 30px; */
   padding-top: 20px;
-
-  /* margin: 5%; */
 }
 
 .error1 {
   display: flex;
   float: left;
-}
-
-.mail-id.success input {
-  border-color: rgb(51 242 51);
-}
-
-.mail-id.error input {
-  border-color: rgb(253 0 0);
-}
-
-.error {
-  color: red;
   visibility: hidden;
-  padding: 5px;
-
-  /* margin: 10px; */
-  position: relative;
 }
 
 .form-text {
