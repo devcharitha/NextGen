@@ -2,13 +2,13 @@ import { module, test } from 'qunit';
 
 import { setupTest } from 'next-gen/tests/helpers';
 
-module('Unit | Model | customer details', function (hooks) {
+module('Unit | Model | customers', function (hooks) {
   setupTest(hooks);
 
   // Replace this with your real tests.
   test('it exists', function (assert) {
     let store = this.owner.lookup('service:store');
-    let model = store.createRecord('customer-details', {});
+    let model = store.createRecord('customers', {});
     assert.ok(model);
   });
 });

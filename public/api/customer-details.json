@@ -1,33 +1,28 @@
 {
-    "customerDetails": [
-        {
-            "id": "555",
-            "emailId": "nihar@example.com",
-            "accountNumber": 1234567890,
-            "siteAddress": "proddatur, kadapa",
-            "billAmount": 1000,
-            "listOfAppliances": [
-                {
-                    "id": "1234567890-6776",
-                    "type": "Gas Stove"
-                },
-                {
-                    "id": "1234567890-897",
-                    "type": "Electric Cooker"
-                },
-                {
-                    "id": 9,
-                    "type": "AC"
-                },
-                {
-                    "id": 5,
-                    "type": "Fridge"
-                },
-                {
-                    "id": 6,
-                    "type": "Oven"
-                }
-            ]
-        }
-    ]
-}
+    "data": {
+      "type": "customerdetails",
+      "id": "1234567890",
+      "attributes": {
+        "accountNumber": 1234567890,
+        "emailId": "user@example.com",
+        "siteAddress": "sholinganallur,chennai",
+        "billAmount": 1000,
+        "listOfAppliances": [
+          [
+            {
+              "id": "12345678-567",
+              "name": "Fridge"
+            },
+            {
+              "id": 12345679,
+              "type": "Gas Stove"
+            },
+            {
+              "id": 123456710,
+              "type": "Cooker"
+            }
+          ]
+        ]
+      }
+    }
+  }

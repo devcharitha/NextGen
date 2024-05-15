@@ -11,6 +11,7 @@ export default class LoginFormComponent extends Component {
   @tracked password;
   @tracked errorMessage;
 
+
   @action
   async signIn(event) {
     event.preventDefault();
