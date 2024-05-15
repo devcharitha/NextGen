@@ -78,8 +78,6 @@
     "edition": "octane"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "chart.js": "^4.4.2",
-    "highcharts": "^11.4.1"
+    "bootstrap": "^5.3.3"
   }
 }

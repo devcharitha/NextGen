@@ -1,11 +1,5 @@
 .dashboard-page {
   min-height: 100vh;
-
-  /* background: linear-gradient(
-    90deg,
-    rgb(67 141 232 / 71.9%) 0%,
-    rgba(0, 213, 255, 0.429) 100%
-  ); */
   background: linear-gradient(
     90deg,
     rgb(135 139 143 / 52.1%) 0%,
@@ -24,7 +18,6 @@
 .reading {
   background-color: white;
   color: black;
-  /* box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%); */
   margin-bottom: 1rem;
 }
 
@@ -35,7 +28,6 @@
 
 .address {
   background-color: white;
-  /* box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%); */
 }
 
 .numbers {
@@ -63,14 +55,12 @@
 
 .street-name {
   margin-top: 8px;
-  /* margin-left: 0px; */
   color: rgb(0 0 0);
   font-size: 0.8rem;
 }
 
 .account {
   background-color: white;
-  /* box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%); */
 }
 
 .acc {
@@ -90,7 +80,6 @@
   border: solid rgb(252 252 252);
   height: 100%;
   background-color: white;
-  /* box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%); */
 }
 
 .per-day-reading {
@@ -102,14 +91,6 @@
   color: white;
 }
 
-/* .carbon-img {
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
-} */
-
-/* .watt-reating {
-  box-shadow: 2px 2px 5px rgb(0 0 0 / 26.5%);
-} */
-
 .calc-btn {
   border: solid 1px rgb(10 180 219 / 88.6%);
   border-radius: 4px;
@@ -117,7 +98,7 @@
   padding: 10px;
   margin-left: 50px;
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(0 0 0);
 }
 
 .note {
