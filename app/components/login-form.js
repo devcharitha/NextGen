@@ -9,6 +9,7 @@ export default class LoginFormComponent extends Component {
     @tracked passwordError;
     @tracked email;
     @tracked password;
+    @tracked errorMessage
 
     validateEmail(email) {
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -19,17 +20,31 @@ export default class LoginFormComponent extends Component {
     async signIn(event) {
         event.preventDefault();
 
-        console.log(this.email);
-        console.log(this.password);
-
-        if (!this.email || !this.validateEmail(this.email)) {
+        if (!this.email && !this.password) {
+            this.errorMessage = 'Enter the email and password';
+            setTimeout(() => {
+                this.errorMessage = '';
+            }, 3000);
+        }
+        else if (!this.email) {
+            this.emailError = 'Enter an email ';
+            setTimeout(() => {
+                this.emailError = '';
+            }, 3000);
+        }
+        else if (!this.validateEmail(this.email)){
             this.emailError = 'Invalid email format';
             setTimeout(() => {
                 this.emailError = '';
             }, 3000);
         }
-
-        if (!this.password || this.password.length < 6) {
+        else if (!this.password) {
+            this.passwordError = 'Enter the password';
+            setTimeout(() => {
+                this.passwordError = '';
+            }, 3000);
+        }
+        else if(this.password.length < 6){
             this.passwordError = 'Invalid password';
             setTimeout(() => {
                 this.passwordError = '';

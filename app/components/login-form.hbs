@@ -5,10 +5,12 @@
     <small class="text-danger email-error">{{this.emailError}}</small>
   </div>
   <div class="pwd mb-3">
-    <Input type="password" class="form-control" id="password-field" placeholder="Enter Password"
-      @value={{this.password}} />
+    <Input type="password" class="form-control" id="password-field" placeholder="Enter Password" @value={{this.password}} />
     <small class="text-danger password-error">{{this.passwordError}}</small>
 
+  </div>
+  <div>
+    <small class="text-danger">{{this.errorMessage}}</small>
   </div>
   <button type="submit" class="btn btn-primary" {{on "click" this.signIn}}>Sign In</button>
 </form>
