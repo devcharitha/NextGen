@@ -27,7 +27,6 @@ export default class LoginFormComponent extends Component {
             setTimeout(() => {
                 this.emailError = '';
             }, 3000);
-            return;
         }
 
         if (!this.password || this.password.length < 6) {
@@ -35,9 +34,10 @@ export default class LoginFormComponent extends Component {
             setTimeout(() => {
                 this.passwordError = '';
             }, 3000);
-            return;
         }
-
+        else{
         this.router.transitionTo('dashboard');
+
+        }
     }
 }
