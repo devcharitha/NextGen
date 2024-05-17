@@ -11,7 +11,7 @@ export default class CustomersRoute extends Route {
   //   }
   async model(params) {
     // console.log(store );
-    const data = await this.store.findRecord('customers', params.id);
+    const data = await this.store.findRecord('customers', 3600101);
     return data;
   }
 }
