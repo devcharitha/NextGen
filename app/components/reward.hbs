@@ -1,8 +1,8 @@
 <div class="reward border rounded-3 mb-3 mt-3">
   <h5 class="summary-heading p-2">Reward summary</h5>
   <div class="reward-wrap m-2 d-flex">
-    <h6 class="rewards-earned">Rewards Points</h6>
-    <h6 class="dollar">10$</h6>
+    <h6 class="rewards-earned">Rewards Earned</h6>
+    <h6 class="dollar">{{this.rewardEarned}}</h6>
   </div>
 </div>
 
@@ -10,10 +10,10 @@
   <h5 class="activity-heading p-2">Activities</h5>
   <div class="point-wrap pt-1 d-flex">
     <h6 class="points-earned m-2">Energy Quiz</h6>
-    <h6 class="point">479</h6>
+    <h6 class="point">{{this.quizPoints}}</h6>
   </div>
   <div class="training-wrap d-flex">
     <h6 class="energy-training m-2">Energy Training</h6>
-    <h6 class="energy-point">479</h6>
+    <h6 class="energy-point">{{this.trainingPoints}}</h6>
   </div>
 </div>
