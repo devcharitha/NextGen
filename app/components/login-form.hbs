@@ -12,5 +12,6 @@
   <div>
     <small class="text-danger">{{this.errorMessage}}</small>
   </div>
-  <button type="submit" class="btn btn-primary" {{on "click" this.signIn}}>Sign In</button>
+  <button  type="submit" class="btn btn-primary" {{on "click" this.signIn}}>Sign In</button>
+  <LinkTo @route="forgot-password">forgotpassword</LinkTo>
 </form>

@@ -4,6 +4,7 @@
 @import url("reward.css");
 @import url("navbar-main.css");
 @import url("dropdown.css");
+@import url("forgot-password.css");
 
 * {
   font-family: Arial, Helvetica, sans-serif;
