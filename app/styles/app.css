@@ -4,6 +4,9 @@
 @import url("reward.css");
 @import url("navbar-main.css");
 @import url("dropdown.css");
+@import url("account.css");
+
+
 
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -13,11 +16,11 @@
 }
 
 .login-page {
-  background-image: linear-gradient(rgb(0 0 0 / 75%), rgba(39, 38, 38, 0.75)),
-    url("/assets/images/bg-image.jpg");
+  background: linear-gradient(rgb(0 0 0 / 75%), rgb(39 38 38 / 75%)), 
+    url("/assets/images/bg-image.jpg") no-repeat;
   background-size: cover;
+  background-position: center;
   height: 100vh;
-  background-repeat: no-repeat;
 }
 
 .navbar {
@@ -45,7 +48,7 @@
   width: 85%;
   margin-bottom: 4%;
   margin-top: 2%;
-  background: linear-gradient(rgb(53 81 152), rgb(255 255 255 / 0%));
+  /* background: linear-gradient(rgb(53 81 152), rgb(255 255 255 / 0%)); */
 }
 
 .email-id {

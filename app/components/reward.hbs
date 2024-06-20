@@ -1,19 +1,37 @@
-<div class="reward border rounded-3 mb-3 mt-3">
-  <h5 class="summary-heading p-2">Reward summary</h5>
-  <div class="reward-wrap m-2 d-flex">
-    <h6 class="rewards-earned">Rewards Points</h6>
-    <h6 class="dollar">10$</h6>
-  </div>
-</div>
-
 <div class="activities">
-  <h5 class="activity-heading p-2">Activities</h5>
-  <div class="point-wrap pt-1 d-flex">
-    <h6 class="points-earned m-2">Energy Quiz</h6>
-    <h6 class="point">479</h6>
-  </div>
-  <div class="training-wrap d-flex">
-    <h6 class="energy-training m-2">Energy Training</h6>
-    <h6 class="energy-point">479</h6>
-  </div>
+  <ul class="list-group">
+    <li class="Activity-header d-flex p-2">Activities</li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center p-2"
+    >
+      Activity Name
+      <span class="text-dark">{{this.activity.activityName}}</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center p-2"
+    >
+      Points Earned
+      <span class="badge text-dark">{{this.activity.pointsEarned}}</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center p-2"
+    >
+      Rewards Earned
+      <span class="text-dark">${{this.activity.rewardsEarned}}</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center p-2"
+    >
+      Start Date
+      <span class="badge text-dark">{{this.activity.activityStartDate}}</span>
+    </li>
+    <li
+      class="list-group-item d-flex justify-content-between align-items-center p-2"
+    >
+      Completion Date
+      <span
+        class="badge text-dark"
+      >{{this.activity.activityCompletionDate}}</span>
+    </li>
+  </ul>
 </div>
