@@ -8,5 +8,4 @@ export default class RewardComponent extends Component {
       pointsEarned: '50',
       rewardsEarned: '5',
     }
-  
 }

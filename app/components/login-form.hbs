@@ -1,23 +1,12 @@
-<form class="formclass">
+<form class="formclass" {{on "submit" this.signIn}}>
   <h3 class="sign-in">Sign In</h3>
   <div class="email-id mb-3">
-    <input
-      id="email"
-      type="email"
-      class="form-control"
-      placeholder="Enter Email"
-      aria-describedby="emailHelp"
-    />
-    <div class="error1"><small class="error">Invalid Email ID </small></div>
+    <Input type="email" class="form-control" id="email-field" placeholder="Enter Email" @value={{this.email}} />
+    <small class="text-danger email-error">{{this.emailError}}</small>
   </div>
   <div class="pwd mb-3">
-    <input
-      type="password"
-      class="form-control"
-      id="password"
-      placeholder="Enter Password"
-    />
-    <div class="error1"><small class="error">Invalid Password</small></div>
+    <Input type="password" class="form-control" id="password-field" placeholder="Enter Password" @value={{this.password}} />
+    <small class="text-danger password-error">{{this.passwordError}}</small>
 
   </div>
   <LinkTo @route="accounts" class="btn btn-primary">Sign In</LinkTo>
