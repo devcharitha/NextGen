@@ -51,8 +51,32 @@ export default class LoginFormComponent extends Component {
             }, 3000);
         }
         else{
-        this.router.transitionTo('dashboard');
+
+        // this.router.transitionTo('dashboard');//////////
+        this.authenticateUser(this.email, this.password);
+        // console.log(this.email,this.password)
 
         }
+    }
+    async authenticateUser(email, password){
+        const api='https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
+    try{
+        const response= await fetch(api,{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({email, password})
+        });
+        console.log(response)
+        if(!response.ok){
+            throw new Error('response is not ok', response);
+        }
+        const data= await response.json();
+        console.log("success",data);
+    }catch(error){
+
+        console.log("error",error);
+    }
     }
 }
