@@ -9,8 +9,6 @@
     <small class="text-danger password-error">{{this.passwordError}}</small>
 
   </div>
-  <div>
-    <small class="text-danger">{{this.errorMessage}}</small>
-  </div>
-  <button type="submit" class="btn btn-primary" {{on "click" this.signIn}}>Sign In</button>
+  <LinkTo @route="accounts" class="btn btn-primary">Sign In</LinkTo>
+  <div id="emailHelp" class="form-text"><p>Forgot password</p></div>
 </form>

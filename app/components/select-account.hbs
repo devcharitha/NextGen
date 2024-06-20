@@ -1,0 +1,41 @@
+<form class="premis-wrap m-5">
+  <!-- app/templates/example.hbs -->
+  <div class="select-account m-5">
+    <label>Choose an account number:</label>
+    <select class="accounts" {{on "change" this.selectAccount}}>
+      <option value="">-- Select an Account --</option>
+      {{#each this.accounts as |account|}}
+        <option value={{account}}>{{account}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <div class="select-premises m-5">
+    <label>Choose a premise number:</label>
+    <select
+      class="premise"
+      {{on "change" this.selectPremise}}
+      disabled={{this.isPremisesDisabled}}
+    >
+      <option value="">-- Select a Premise --</option>
+      {{#each this.premises as |premise|}}
+        <option value={{premise}}>{{premise}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <button class="button" disabled={{this.isSubmitDisabled}}><LinkTo
+      @route="dashboard"
+      class="dashboard"
+    >Submit</LinkTo></button>
+</form>
+
+{{!-- <select  {{on "change" (pick "target.value" @onChange)}}>
+  {{#each @options as |theOption|}}
+    <option value={{theOption}} selected={{eq theOption @value}}>{{theOption}}</option>
+  {{/each}}
+</select> --}}
+
+{{!-- <ul>
+  {{#each this.accounts as |account|}}
+    <li>{{account}}</li>
+  {{/each}}
+</ul> --}}
