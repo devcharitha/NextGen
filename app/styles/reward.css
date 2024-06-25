@@ -1,30 +1,46 @@
-.activity-heading {
+/* .activity-heading {
   background-color: rgb(10 180 219 / 88.6%);
   border-radius: 8px 8px 0 0;
-}
+}*/
 
 .summary-heading {
   background-color: rgb(10 180 219 / 88.6%);
-  border-radius: 7px 7px 0 0 !important;
+  border-radius: 7px 7px 0 0 ;
 }
 
-.dollar {
+.details {
+  /* margin-left: 190px; */
+  text-align: end; 
+  justify-content: end; 
+}
+
+.badge{
+  color: black;
+}
+
+/* .point {
+  margin-left: 215px !important;
+} */
+  
+/*.energy-point {
   margin-left: 190px;
-}
-
-.point {
-  margin-left: 215px;
-}
-
-.energy-point {
-  margin-left: 190px;
-}
+}*/
 
 .reward {
   background-color: white;
 }
 
 .activities {
+  margin-top: -20%;
   background-color: white;
   border-radius: 7px;
+} 
+
+.reward-wrap{
+   justify-content: space-between;
+}
+
+.Activity-header{
+  background-color: rgb(10 180 219 / 88.6%);
+  border-radius: 8px 8px 0 0;
 }
