@@ -6,8 +6,6 @@
 @import url("dropdown.css");
 @import url("account.css");
 
-
-
 * {
   font-family: Arial, Helvetica, sans-serif;
   padding-left: 0 !important;
@@ -16,7 +14,8 @@
 }
 
 .login-page {
-  background: linear-gradient(rgb(0 0 0 / 75%), rgb(39 38 38 / 75%)), 
+  background:
+    linear-gradient(rgb(0 0 0 / 75%), rgb(39 38 38 / 75%)),
     url("/assets/images/bg-image.jpg") no-repeat;
   background-size: cover;
   background-position: center;

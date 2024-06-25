@@ -1,7 +1,6 @@
-<form class="premis-wrap m-5">
-  <!-- app/templates/example.hbs -->
+<form class="premis-wrap m-5" {{on 'submit' this.navigateToDashboard}}>
   <div class="select-account m-5">
-    <label>Choose an account number:</label>
+    <label>Choose an account number: </label>
     <select class="accounts" {{on "change" this.selectAccount}}>
       <option value="">-- Select an Account --</option>
       {{#each this.accounts as |account|}}
@@ -22,20 +21,5 @@
       {{/each}}
     </select>
   </div>
-  <button class="button" disabled={{this.isSubmitDisabled}}><LinkTo
-      @route="dashboard"
-      class="dashboard"
-    >Submit</LinkTo></button>
+  <button class="button" disabled={{this.isSubmitDisabled}} type="submit">Submit</button>
 </form>
-
-{{!-- <select  {{on "change" (pick "target.value" @onChange)}}>
-  {{#each @options as |theOption|}}
-    <option value={{theOption}} selected={{eq theOption @value}}>{{theOption}}</option>
-  {{/each}}
-</select> --}}
-
-{{!-- <ul>
-  {{#each this.accounts as |account|}}
-    <li>{{account}}</li>
-  {{/each}}
-</ul> --}}
