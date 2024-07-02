@@ -1,6 +1,12 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class AccountComponent extends Component {
-  @tracked accountNumber = 9015284938;
+  @service account;
+
+  get selectedAccount() {
+    const accountNum = this.account.getAccount();
+    console.log('AccountNumber:', accountNum);
+    return accountNum;
+  }
 }

@@ -11,7 +11,6 @@ export default class LoginFormComponent extends Component {
   @tracked email;
   @tracked password;
   @tracked errorMessage;
- 
 
   validateEmail(email) {
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -54,33 +53,33 @@ export default class LoginFormComponent extends Component {
     }
   }
   async authenticateUser(email, password) {
-    const api = 'https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
+    const api =
+      'https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
     try {
       const response = await fetch(api, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, password })
+        body: JSON.stringify({ email, password }),
       });
       if (!response.ok) {
         throw new Error('response is not ok', response);
       }
       const data = await response.json();
-      console.log("success", data);
-      
+      console.log('success', data);
+
       // const decodedToken = jwt_decode.default(data.token);
       // console.log('Decoded token:',decodedToken);
 
-      const tokenParts=data.access_token.split('.');
+      const tokenParts = data.access_token.split('.');
       const decodedToken = JSON.parse(atob(tokenParts[1]));
-      console.log('Decoded token:',decodedToken);
+      console.log('Decoded token:', decodedToken);
 
       this.token.setToken(data.access_token, decodedToken);
       this.router.transitionTo('accounts');
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   }
-  
 }

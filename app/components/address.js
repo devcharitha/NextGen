@@ -1,7 +1,19 @@
 import Component from '@glimmer/component';
-import { tracked } from '@glimmer/tracking';
+import { inject as service } from '@ember/service';
 
 export default class AddressComponent extends Component {
-  @tracked name = 'Mr. Walter Brown';
-  @tracked location = 'Flat29 North-London PO167GZ';
+  @service account;
+  @service customerDetails;
+
+  get customerFullName() {
+    const fullName = this.customerDetails.getCustomerFullName();
+    console.log('Name:', fullName);
+    return fullName;
+  }
+
+  get selectedPremise() {
+    const location = this.account.getPremise();
+    console.log('Location:', location);
+    return location;
+  }
 }

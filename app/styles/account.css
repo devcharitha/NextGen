@@ -1,10 +1,10 @@
 .account-wrap {
-  background-image: linear-gradient(rgb(0 0 0 / 75%), rgba(53, 53, 53, 0.75)),
+  background-image: linear-gradient(rgb(0 0 0 / 75%), rgb(53 53 53 / 75%)),
     url("/assets/images/green-background.jpg");
   background-size: 100%;
   color: white;
   align-items: center;
-  padding: 1% 10% 10% 10%;
+  padding: 1% 10% 10%;
   font-weight: lighter;
 }
 
