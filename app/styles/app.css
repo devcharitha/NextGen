@@ -6,31 +6,46 @@
 @import url("dropdown.css");
 @import url("account.css");
 @import url("forgot-password.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    Roboto system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
   padding-left: 0 !important;
   margin: 0;
   box-sizing: border-box;
 }
 
+#myVideo {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  object-fit: cover;
+}
+
 .login-page {
-  background: linear-gradient(rgb(0 0 0 / 75%), rgb(39 38 38 / 75%)), 
-    url("/assets/images/bg-image.jpg") no-repeat;
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.374), rgba(39, 38, 38, 0.189));
   height: 100vh;
 }
 
 .navbar {
-  margin-top: 5px;
-  margin-left: 70%;
+  float: right;
   margin-bottom: 50px;
 }
 
 .formclass {
-  width: 62%;
-  background-color: rgb(255 255 255);
   border-radius: 4px;
   margin-left: 10%;
   margin-top: 8%;
@@ -39,15 +54,14 @@
 }
 
 .welcome-txt {
-  margin: 10%;
   color: white;
+  font-weight: lighter;
 }
 
 .btn {
   width: 85%;
   margin-bottom: 4%;
   margin-top: 2%;
-  /* background: linear-gradient(rgb(53 81 152), rgb(255 255 255 / 0%)); */
 }
 
 .email-id {
@@ -74,6 +88,62 @@
   display: block;
   margin-top: 30rem;
 }
-.passwords{
+.passwords {
   padding-bottom: 20px;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+.passwords a{
+  text-decoration: none;
+  color: aliceblue;
+}
+
+.sign-in{
+  font-weight: lighter;
+}
+
+.google-login{
+  margin-left: 80px;
+}
+
+.email-input{
+  width: 250px;
+  height: 45px;
+  border-radius: 20px;
+  border: 1rem gray;
+  color: aliceblue;
+  background: linear-gradient(rgba(236, 235, 251, 0.249), rgba(239, 248, 250, 0.267))
+}
+
+.email-input::placeholder{
+  color: white;
+  font-weight: lighter;
+}
+
+.password-input{
+  width: 250px;
+  height: 45px;
+  border-radius: 20px;
+  border: 1rem gray;
+  color: aliceblue;
+  background: linear-gradient(rgba(236, 235, 251, 0.329), rgba(239, 248, 250, 0.354))
+}
+
+.password-input::placeholder{
+  color: white;
+  font-weight: lighter;
+}
+
+.login-button{
+  border: 1rem gray;
+  padding-left: 3px;
+  border-radius: 4px;
+  margin-bottom: 4%;
+  width: 250px;
+  height: 45px;
+  background: linear-gradient(rgba(53, 56, 56, 0.479), rgba(62, 64, 64, 0.32));
+  border-radius: 20px;
+  color: aliceblue;
+  font-weight: lighter;
 }
