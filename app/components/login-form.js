@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-// import * as jwt_decode from 'jwt-decode';
+
 export default class LoginFormComponent extends Component {
   @service router;
   @service token;
@@ -17,9 +17,16 @@ export default class LoginFormComponent extends Component {
     return emailPattern.test(email);
   }
 
+  validatePassword(password) {
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,12}$/;
+    return passwordPattern.test(password);
+  }
+
   @action
   async signIn(event) {
     event.preventDefault();
+
+    this.errorMessage = '';
 
     if (!this.email && !this.password) {
       this.errorMessage = 'Enter the email and password';
@@ -27,8 +34,7 @@ export default class LoginFormComponent extends Component {
         this.errorMessage = '';
       }, 3000);
     } else if (!this.email) {
-      this.emailError = 'Enter an email ';
-
+      this.emailError = 'Enter the email ';
       setTimeout(() => {
         this.emailError = '';
       }, 3000);
@@ -42,14 +48,13 @@ export default class LoginFormComponent extends Component {
       setTimeout(() => {
         this.passwordError = '';
       }, 3000);
-    } else if (this.password.length < 6) {
-      this.passwordError = 'Invalid password';
+    } else if (!this.validatePassword(this.password)) {
+      this.passwordError = 'Invalid password format';
       setTimeout(() => {
         this.passwordError = '';
       }, 3000);
     } else {
       this.authenticateUser(this.email, this.password);
-      // this.router.transitionTo('accounts');
     }
   }
   async authenticateUser(email, password) {
@@ -64,13 +69,20 @@ export default class LoginFormComponent extends Component {
         body: JSON.stringify({ email, password }),
       });
       if (!response.ok) {
-        throw new Error('response is not ok', response);
+        const errorData = await response.json();
+        if (errorData.error.message === 'Unauthorized') {
+          this.errorMessage = 'Invalid credentials';
+        } else {
+          this.errorMessage =
+            errorData.error.message || 'Failed to authenticate';
+        }
+        setTimeout(() => {
+          this.errorMessage = '';
+        }, 3000);
+        return;
       }
       const data = await response.json();
       console.log('success', data);
-
-      // const decodedToken = jwt_decode.default(data.token);
-      // console.log('Decoded token:',decodedToken);
 
       const tokenParts = data.access_token.split('.');
       const decodedToken = JSON.parse(atob(tokenParts[1]));
@@ -80,6 +92,7 @@ export default class LoginFormComponent extends Component {
       this.router.transitionTo('accounts');
     } catch (error) {
       console.log('error', error);
+      this.errorMessage = 'failed to authenticate';
     }
   }
 }

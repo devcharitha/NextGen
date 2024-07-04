@@ -20,7 +20,6 @@ export default class AuthorizationSerializer extends JSONAPISerializer {
         jti: jti,
       },
     };
-
     console.log('normalized payload', normalizedPayload);
     return normalizedPayload;
   }

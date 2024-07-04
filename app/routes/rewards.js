@@ -3,10 +3,12 @@ import { service } from '@ember/service';
 
 export default class RewardsRoute extends Route {
   @service store;
-  async model(params) {
-    let data = await this.store.query('rewards', {
-      id: '3678905',
-    });
+  @service token;
+
+  async model() {
+
+    const customerId =this.token.customerId;
+    let data = await this.store.query('rewards', {customerId});
     console.log('respone:', data);
     return data;
   }

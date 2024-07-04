@@ -70,8 +70,7 @@ export default class SelectAccountComponent extends Component {
         if (!res) {
           throw new Error('response is not ok', res);
         }
-        this.premises =
-          res.data.attributes.premises.map((premise) => premise.premise) || [];
+        this.premises =res.data.attributes.premises.map((premise) => premise.premise) || [];
         this.premiseId = res.data.attributes.premises[0]?.premiseId;
         console.log('premise response:', res);
       })

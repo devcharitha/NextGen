@@ -10,5 +10,8 @@
 
   </div>
   <button class="btn btn-primary" type="submit">Sign In</button>
+   {{#if this.errorMessage}}
+    <p class="text-danger">{{this.errorMessage}}</p>
+  {{/if}}
   <div id="emailHelp" class="form-text"><p>Forgot password</p></div>
 </form>
