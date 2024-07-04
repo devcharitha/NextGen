@@ -13,4 +13,7 @@ Router.map(function () {
   this.route('authorization');
   this.route('forgot-password');
   this.route('rewards');
+  this.route('customer');
+  this.route('consumption');
+  this.route('premises');
 });
