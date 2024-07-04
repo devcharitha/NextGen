@@ -1,19 +1,35 @@
-<form class="formclass" {{on "submit" this.signIn}}>
-  <h3 class="sign-in">Sign In</h3>
-  <div class="email-id mb-3">
-    <Input type="email" class="form-control" id="email-field" placeholder="Enter Email" @value={{this.email}} />
-    <small class="text-danger email-error">{{this.emailError}}</small>
-  </div>
-  <div class="pwd mb-3">
-    <Input type="password" class="form-control" id="password-field" placeholder="Enter Password" @value={{this.password}} />
-    <small class="text-danger password-error">{{this.passwordError}}</small>
+<div class="row">
+  <div class="col-8 mx-auto">
+    <form class="formclass" {{on "submit" this.signIn}}>
+      <h3 class="sign-in text-light">Log-in to your Account</h3>
+      <div class="email-id mb-4 mt-4">
+        <Input
+          type="email"
+          class="email-input"
+          id="email-field"
+          placeholder="Enter Email"
+          @value={{this.email}}
+        />
+        <small class="text-danger email-error">{{this.emailError}}</small>
+      </div>
+      <div class="pwd mb-4">
+        <Input
+          type="password"
+          class="password-input"
+          id="password-field"
+          placeholder="Enter Password"
+          @value={{this.password}}
+        />
+        <small class="text-danger password-error">{{this.passwordError}}</small>
 
+      </div>
+      <div>
+        <small class="text-danger">{{this.errorMessage}}</small>
+      </div>
+      <button type="submit" class="login-button btn-light" {{on "click" this.signIn}}>Log In</button>
+      <div class="passwords">
+        <LinkTo @route="forgot-password"><a class="passwords">Forgot password?</a></LinkTo>
+      </div>
+    </form>
   </div>
-  <div>
-    <small class="text-danger">{{this.errorMessage}}</small>
-  </div>
-  <button  type="submit" class="btn btn-primary" {{on "click" this.signIn}}>Sign In</button>
-  <div class="passwords">
-  <LinkTo @route="forgot-password">Forgot password?</LinkTo>
-  </div>
-</form>
+</div>
