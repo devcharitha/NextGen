@@ -9,7 +9,4 @@ export default class CustomerAdapter extends JSONAPIAdapter {
         Authorization: `Bearer ${this.token.access_token}`,
         'Content-Type': 'application/json',
     };
-    pathForType(type) {
-        return type;
-    }
 }
