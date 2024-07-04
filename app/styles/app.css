@@ -8,7 +8,7 @@
 
 * {
   font-family:
-    Roboto system-ui,
+    "Roboto system-ui",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
@@ -34,7 +34,7 @@
 }
 
 .login-page {
-  background: linear-gradient(rgba(0, 0, 0, 0.374), rgba(39, 38, 38, 0.189));
+  background: linear-gradient(rgb(0 0 0 / 37.4%), rgb(39 38 38 / 18.9%));
   height: 100vh;
 }
 
@@ -86,61 +86,67 @@
   display: block;
   margin-top: 30rem;
 }
+
 .passwords {
   padding-bottom: 20px;
   font-weight: lighter;
   text-decoration: none;
 }
 
-.passwords a{
+.passwords a {
   text-decoration: none;
   color: aliceblue;
 }
 
-.sign-in{
+.sign-in {
   font-weight: lighter;
 }
 
-.google-login{
+.google-login {
   margin-left: 80px;
 }
 
-.email-input{
+.email-input {
   width: 250px;
   height: 45px;
   border-radius: 20px;
   border: 1rem gray;
   color: aliceblue;
-  background: linear-gradient(rgba(236, 235, 251, 0.249), rgba(239, 248, 250, 0.267))
+  background: linear-gradient(
+    rgb(236 235 251 / 24.9%),
+    rgb(239 248 250 / 26.7%)
+  );
 }
 
-.email-input::placeholder{
+.email-input::placeholder {
   color: white;
   font-weight: lighter;
 }
 
-.password-input{
+.password-input {
   width: 250px;
   height: 45px;
   border-radius: 20px;
   border: 1rem gray;
   color: aliceblue;
-  background: linear-gradient(rgba(236, 235, 251, 0.329), rgba(239, 248, 250, 0.354))
+  background: linear-gradient(
+    rgb(236 235 251 / 32.9%),
+    rgb(239 248 250 / 35.4%)
+  );
 }
 
-.password-input::placeholder{
+.password-input::placeholder {
   color: white;
   font-weight: lighter;
 }
 
-.login-button{
+.login-button {
   border: 1rem gray;
   padding-left: 3px;
-  border-radius: 4px;
   margin-bottom: 4%;
   width: 250px;
   height: 45px;
-  background: linear-gradient(rgba(53, 56, 56, 0.479), rgba(62, 64, 64, 0.32));
+  background: linear-gradient(rgb(53 56 56 / 47.9%), rgb(62 64 64 / 32%));
   border-radius: 20px;
   color: aliceblue;
   font-weight: lighter;
