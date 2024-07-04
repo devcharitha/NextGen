@@ -1,14 +1,14 @@
 import Controller from '@ember/controller';
-import {action} from '@ember/object'
+import { action } from '@ember/object';
 
 export default Controller.extend({
-  accountValue : '',
-  premiseValue : '',
-  isPremiseDisabled : true,
+  accountValue: '',
+  premiseValue: '',
+  isPremiseDisabled: true,
 
   actions: {
     updatePremiseEnabled() {
-      this.set('isPremiseDisabled', this.get('accountValue') === '');
-    }
-  }
+      this.set('isPremiseDisabled', this.accountValue === '');
+    },
+  },
 });
