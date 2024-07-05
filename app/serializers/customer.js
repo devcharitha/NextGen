@@ -2,6 +2,8 @@ import JSONAPISerializer from '@ember-data/serializer/json';
 
 export default class CustomerSerializer extends JSONAPISerializer {
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
+    console.log(payload)
+    let Id=payload.jsonapi.data.id;
     let customerId = payload.jsonapi.data.attributes.customerId;
     let firstName = payload.jsonapi.data.attributes.firstName;
     let lastName = payload.jsonapi.data.attributes.lastName;
@@ -21,7 +23,7 @@ export default class CustomerSerializer extends JSONAPISerializer {
     });
     let normalizedPayload = {
       data: {
-        id: customerId,
+        id: Id,
         type: 'customers',
         attributes: {
           customerId,

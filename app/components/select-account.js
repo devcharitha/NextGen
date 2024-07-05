@@ -8,7 +8,7 @@ export default class SelectAccountComponent extends Component {
   @service router;
   @service customerDetails;
   @service account;
-  @service store
+  @service store;
 
   @tracked selectedAccount = null;
   @tracked selectedPremise = null;
@@ -51,8 +51,8 @@ export default class SelectAccountComponent extends Component {
   async navigateToDashboard(event) {
     event.preventDefault();
     await this.getCustomerDetails();
-    await this.getRewards();
-    await this.getComsumptionDetails();
+    // await this.getRewards();
+    // await this.getComsumptionDetails();
     this.router.transitionTo('dashboard');
   }
 
@@ -97,7 +97,7 @@ export default class SelectAccountComponent extends Component {
     //   },
     // )
     try {
-      const response = await this.store.findRecord('customer', this.token.customerId)
+      const response = await this.store.findRecord('customers', this.token.customerId)
       if (!response) {
         throw new Error('response is not ok', response);
       }
@@ -131,15 +131,15 @@ export default class SelectAccountComponent extends Component {
     }
   }
   async getComsumptionDetails() {
-    // fetch(
-    //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
-    //   {
-    //     // headers: {
-    //     //   Authorization: `Bearer ${this.token.token}`,
-    //     //   'Content-Type': 'application/json',
-    //     // },
-    //   },
-    // )
+  //   // fetch(
+  //   //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
+  //   //   {
+  //   //     // headers: {
+  //   //     //   Authorization: `Bearer ${this.token.token}`,
+  //   //     //   'Content-Type': 'application/json',
+  //   //     // },
+  //   //   },
+  //   // )
     try{
     let response = await this.store.query('consumption', { premiseId: this.premiseId })
 

@@ -1,7 +1,7 @@
 import Model from '@ember-data/model';
 import { attr } from '@ember-data/model';
 
-export default class CustomerModel extends Model {
+export default class CustomersModel extends Model {
   @attr('string') customerId;
   @attr('string') firstName;
   @attr('string') lastName;
