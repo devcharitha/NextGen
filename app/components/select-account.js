@@ -51,31 +51,18 @@ export default class SelectAccountComponent extends Component {
   async navigateToDashboard(event) {
     event.preventDefault();
     await this.getCustomerDetails();
-    // await this.getRewards();
-    // await this.getComsumptionDetails();
+    await this.getRewards();
+    await this.getComsumptionDetails();
     this.router.transitionTo('dashboard');
   }
 
   async getPremises() {
-    // fetch(
-    //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/premises?accountNumber=${this.selectedAccount}`,
-    //   {
-    //     // headers: {
-    //     //   Authorization: `Bearer ${this.token.access_token}`,
-    //     //   'Content-Type': 'application/json',
-    //     // },
-    //   },
-    // )
-
-    // const accountNumber = this.token.accountNumber;
-    // Assuming this code is part of an async function or an async context
 
     try {
       const response = await this.store.queryRecord('premises', { accountNumber: this.selectedAccount });
       if (!response) {
         throw new Error('Response is not ok');
       }
-      // this.premises = response.data.attributes.premises.map((premise) => premise.premise) || [];
       this.premises = response.premises.map((premise) => premise.premise) || [];
       console.log(this.premises)
       this.premiseId = response.premises[0]?.premiseId;
@@ -87,15 +74,6 @@ export default class SelectAccountComponent extends Component {
   }
 
   async getCustomerDetails() {
-    // fetch(
-    //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/${this.token.customerId}`,
-    //   {
-    //     headers: {
-    //       Authorization: `Bearer ${this.token.access_token}`,
-    //       'Content-Type': 'application/json',
-    //     },
-    //   },
-    // )
     try {
       const response = await this.store.findRecord('customers', this.token.customerId)
       if (!response) {
@@ -119,7 +97,7 @@ export default class SelectAccountComponent extends Component {
     //   },
     // )
     try {
-      let response = await this.store.query('rewards', { customerId: this.token.customerId })
+      let response = await this.store.queryRecord('rewards', { customerId: this.token.customerId })
 
       if (!response) {
         throw new Error('response is not ok', response);
@@ -131,25 +109,25 @@ export default class SelectAccountComponent extends Component {
     }
   }
   async getComsumptionDetails() {
-  //   // fetch(
-  //   //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
-  //   //   {
-  //   //     // headers: {
-  //   //     //   Authorization: `Bearer ${this.token.token}`,
-  //   //     //   'Content-Type': 'application/json',
-  //   //     // },
-  //   //   },
-  //   // )
-    try{
-    let response = await this.store.query('consumption', { premiseId: this.premiseId })
+    //   // fetch(
+    //   //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
+    //   //   {
+    //   //     // headers: {
+    //   //     //   Authorization: `Bearer ${this.token.token}`,
+    //   //     //   'Content-Type': 'application/json',
+    //   //     // },
+    //   //   },
+    //   // )
+    try {
+      let response = await this.store.queryRecord('consumption', { premiseId: this.premiseId })
 
-        if (!response) {
-          throw new Error('response is not ok', response);
-        }
-        console.log(' consumption response:', response);
+      if (!response) {
+        throw new Error('response is not ok', response);
       }
-      catch(error)  {
-        console.log('error', error);
-      }
+      console.log(' consumption response:', response);
+    }
+    catch (error) {
+      console.log('error', error);
+    }
   }
 }

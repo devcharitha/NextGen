@@ -62,41 +62,41 @@ export default class LoginFormComponent extends Component {
     // const api =
     //   'https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
     try {
-    //   const response = await fetch(api, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //     },
-    //     body: JSON.stringify({ email, password }),
-    //   });
+      //   const response = await fetch(api, {
+      //     method: 'POST',
+      //     headers: {
+      //       'Content-Type': 'application/json',
+      //     },
+      //     body: JSON.stringify({ email, password }),
+      //   });
 
-    let response = this.store.createRecord('authorization', {
-      email: this.email,
-      password: this.password
-    });
-    response.save();
-    // if (!response) {
-    //   this.errorMessage = 'Invalid credentials';
-    //   setTimeout(() => {
-    //     this.errorMessage = '';
-    //   }, 3000);
-    //   return;
-    // }else{
-    //   console.log("authorization-response",response)
-    // }
+      let response = this.store.createRecord('authorization', {
+        email: this.email,
+        password: this.password
+      });
+      const tokenResponse = await response.save();
+      console.log("tokenResponse", tokenResponse);
 
-    const tokenParts = response.access_token.split('.');
-    const decodedToken = JSON.parse(atob(tokenParts[1]));
-    console.log('Decoded token:', decodedToken);
+      const tokenParts = tokenResponse.access_token.split('.');
+      const decodedToken = JSON.parse(atob(tokenParts[1]));
+      console.log('Decoded token:', decodedToken);
 
-    this.token.setToken(response.access_token, decodedToken);
-    this.router.transitionTo('accounts');
-  } catch (error) {
-    console.log('error', error);
-    if (error.message.includes('Unauthorized')) {
-      this.errorMessage = 'Invalid credentials';
+      this.token.setToken(tokenResponse.access_token, decodedToken);
+      this.router.transitionTo('accounts');
+    } catch (error) {
+      console.log('error', error);
+      
+      if (error.errors && error.errors[0] && error.errors[0].detail) {
+        const errorMessage = JSON.parse(error.errors[0].detail).error.message;
+        if (errorMessage === 'Unauthorized') {
+          this.errorMessage = 'Invalid credentials';
+          setTimeout(() => {
+            this.errorMessage = '';
+          }, 3000);
+          return;
+        }
+      }
     }
   }
-  
-}
+
 }

@@ -14,8 +14,12 @@ export default class ConsumptionSerializer extends JSONAPISerializer {
 
     const normalizedPayload = {
       data: {
-        premiseId,
-        consumptionDetails: normalizedConsumption,
+        id: '123',
+        type: 'consumption',
+        attributes:{
+          premiseId:premiseId,
+          consumptionDetails: normalizedConsumption,
+        },
       },
     };
 
