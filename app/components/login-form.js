@@ -59,17 +59,7 @@ export default class LoginFormComponent extends Component {
     }
   }
   async authenticateUser(email, password) {
-    // const api =
-    //   'https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
     try {
-      //   const response = await fetch(api, {
-      //     method: 'POST',
-      //     headers: {
-      //       'Content-Type': 'application/json',
-      //     },
-      //     body: JSON.stringify({ email, password }),
-      //   });
-
       let response = this.store.createRecord('authorization', {
         email: this.email,
         password: this.password
@@ -85,7 +75,7 @@ export default class LoginFormComponent extends Component {
       this.router.transitionTo('accounts');
     } catch (error) {
       console.log('error', error);
-      
+
       if (error.errors && error.errors[0] && error.errors[0].detail) {
         const errorMessage = JSON.parse(error.errors[0].detail).error.message;
         if (errorMessage === 'Unauthorized') {

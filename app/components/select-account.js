@@ -87,15 +87,6 @@ export default class SelectAccountComponent extends Component {
     }
   }
   async getRewards() {
-    // fetch(
-    //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/rewards?customerId=${this.token.customerId}`,
-    //   {
-    //     // headers: {
-    //     //   Authorization: `Bearer ${this.token.access_token}`,
-    //     //   'Content-Type': 'application/json',
-    //     // },
-    //   },
-    // )
     try {
       let response = await this.store.queryRecord('rewards', { customerId: this.token.customerId })
 
@@ -109,15 +100,6 @@ export default class SelectAccountComponent extends Component {
     }
   }
   async getComsumptionDetails() {
-    //   // fetch(
-    //   //   `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
-    //   //   {
-    //   //     // headers: {
-    //   //     //   Authorization: `Bearer ${this.token.token}`,
-    //   //     //   'Content-Type': 'application/json',
-    //   //     // },
-    //   //   },
-    //   // )
     try {
       let response = await this.store.queryRecord('consumption', { premiseId: this.premiseId })
 

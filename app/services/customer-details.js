@@ -22,8 +22,7 @@ export default class CustomerDetailsService extends Service {
 
   getAppliances() {
     return (
-      (this.customerDetails &&
-        this.customerDetails.list_of_appliances) || []
+      (this.customerDetails && this.customerDetails.list_of_appliances) || []
     );
   }
 }
