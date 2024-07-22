@@ -2,8 +2,8 @@
   min-height: 100vh;
   background: linear-gradient(
     90deg,
-    rgb(135 139 143 / 52.1%) 0%,
-    rgb(171 184 186 / 53%) 100%
+    rgba(251, 212, 164, 0.605) 0%,
+    rgba(255, 205, 157, 0.53) 100%
   );
 }
 
@@ -34,4 +34,8 @@
   border: solid rgb(252 252 252);
   height: 65%;
   background-color: white;
+}
+
+#graph{
+  height: 300px;
 }

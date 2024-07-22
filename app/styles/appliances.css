@@ -1,10 +1,6 @@
-.appliance-heading {
-  background-color: rgb(10 180 219 / 88.6%);
-  border-radius: 8px 8px 0 0;
+.appliance-detail {
+  background-color: rgb(100, 31, 1);
+  border-radius: 3px;
+  color: white;
 }
 
-.appliance {
-  border-collapse: separate;
-  border-radius: 6px;
-  padding: 3px;
-}
