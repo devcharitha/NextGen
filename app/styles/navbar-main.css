@@ -1,5 +1,5 @@
 .dash-navbar {
-  background-color: rgb(100, 31, 1);
+  background-color: rgb(12, 65, 188);
   height: 2.9rem;
 }
 
@@ -8,7 +8,7 @@
 }
 
 .Account-button {
-  margin-right: 150px;
+  margin-right: 80px;
 }
 
 .options{
@@ -17,9 +17,18 @@
 
 .profile-button{
   border: 0.1rem solid white;
-  background-color: rgba(100, 31, 1, 0.66);
+  background-color: rgb(12, 65, 188);
   color: white;
   margin-top: 6px;
+  height: 33px;
+}
+
+.support-button{
+  border: 0.1rem solid white;
+  background-color: rgb(12, 65, 188);
+  color: white;
+  margin-top: 6px;
+  height: 33px;
 }
 
 .profile-option{

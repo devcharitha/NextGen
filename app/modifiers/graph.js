@@ -37,7 +37,7 @@ Highcharts.chart(element, {
             160, 182, 231, 239, 242, 164, 178, 194, 215, 232,
             220, 178
         ],
-        color: "brown"
+        color: "navy"
     },
     {
         name: 'Carbon FootPrint',
@@ -45,7 +45,7 @@ Highcharts.chart(element, {
             116, 148, 233, 219, 232, 134, 138, 134, 235,222,
             222, 117
         ],
-        color: "black"
+        color: "royalblue"
     }]
 });
 
