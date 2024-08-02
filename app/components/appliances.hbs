@@ -1,20 +1,15 @@
-<table class="appliance table mt-3">
-  <thead class="appliance-heading">
-    <tr>
-      <th scope="s-num col">Id</th>
-      <th scope="col">Appliances</th>
-      <th scope="col">Energy Consumption</th>
-      <th scope="col">Manufacture Date</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-    {{#each this.appliances as |appliance index|}}
-      <tr>
-        <th scope="row">{{inc index}}</th>
-        <td>{{appliance.applianceName}}</td>
-        <td>{{appliance.energyConsumption}}kWH</td>
-        <td>{{appliance.manufactureDate}}</td>
-      </tr>
-    {{/each}}
-  </tbody>
-</table>
+<div class="appliance-detail d-flex justify-content-between ps-3 pe-3 pt-1 mt-2">
+  <p>Id</p>
+  <p>Appliances</p>
+  <p>Consumption</p>
+  <p>Manufacture Date</p>
+</div>
+
+{{#each this.appliances as |appliance index|}}
+<div class="appliance bg-light d-flex justify-content-between ps-3 pe-3 pt-1 mt-1">
+  <p>{{inc index}}</p>
+  <p class="me-4">{{appliance.applianceName}}</p>
+  <p class="me-5">{{appliance.energyConsumption}}KWH</p>
+  <p>{{appliance.manufactureDate}}</p>
+</div>
+{{/each}}

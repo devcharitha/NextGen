@@ -1,23 +1,23 @@
 <form class="premis-wrap m-5" {{on 'submit' this.navigateToDashboard}}>
-  <div class="select-account m-5">
-    <label>Choose an account number: </label>
-    <select class="accounts" {{on "change" this.selectAccount}}>
+  <div class="select-account m-5 d-flex">
+    <p>Choose an account number: </p>
+    <select class="accounts ms-2" {{on "change" this.selectAccount}}>
       <option value="">-- Select an Account --</option>
       {{#each this.accounts as |account|}}
-        <option value={{account}}>{{account}}</option>
+        <option class="choose-account" value={{account}}>{{account}}</option>
       {{/each}}
     </select>
   </div>
-  <div class="select-premises m-5">
-    <label>Choose a premise number:</label>
+  <div class="select-premises m-5 d-flex">
+    <p>Choose a premise number:</p>
     <select
-      class="premise"
+      class="premise ms-3"
       {{on "change" this.selectPremise}}
       disabled={{this.isPremisesDisabled}}
     >
       <option value="">-- Select a Premise --</option>
       {{#each this.premises as |premise|}}
-        <option value={{premise}}>{{premise}}</option>
+        <option class="choose-account" value={{premise}}>{{premise}}</option>
       {{/each}}
     </select>
   </div>

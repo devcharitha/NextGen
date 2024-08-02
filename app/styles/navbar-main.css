@@ -1,12 +1,48 @@
 .dash-navbar {
-  background-color: rgb(10 180 219 / 88.6%);
+  background-color: rgb(12, 65, 188);
+  height: 2.9rem;
 }
 
-.logout-button {
-  margin-right: 150px;
+.profile-image{
+  color: white;
 }
 
-.user-img {
-  margin-right: 20px;
-  margin-top: 4px;
+.Account-button {
+  margin-right: 80px;
+}
+
+.options{
+  position: absolute;
+}
+
+.profile-button{
+  border: 0.1rem solid white;
+  background-color: rgb(12, 65, 188);
+  color: white;
+  margin-top: 6px;
+  height: 33px;
+}
+
+.support-button{
+  border: 0.1rem solid white;
+  background-color: rgb(12, 65, 188);
+  color: white;
+  margin-top: 6px;
+  height: 33px;
+}
+
+.profile-option{
+  width: 140px;
+  height: 50px;
+  background-color: white;
+  color: black;
+  border: 1px solid rgba(128, 128, 128, 0.751);
+
+
+}
+
+.app-title{
+  color: white;
+  margin-left: 50px;
+  margin-top: 7px;
 }

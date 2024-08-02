@@ -1,0 +1,29 @@
+.footprint {
+  background-image: url("/assets/images/forest.avif");
+  background-size: cover;
+  color: white;
+  border: none;
+  vertical-align: middle;
+  height: 163px;
+}
+
+.calc-wrap {
+  background: linear-gradient(
+    rgba(65, 65, 65, 0.249),
+    rgba(125, 124, 124, 0.484)
+  );
+  height: 163px;
+  padding: 20px;
+  
+}
+
+.carbon-calc-button {
+  justify-content: center;
+  border: 1px solid white;
+  background: linear-gradient(
+    rgba(200, 198, 198, 0.354),
+    rgba(206, 210, 208, 0.473)
+  );
+  color: white;
+  margin-left: 120px;
+}
