@@ -12,12 +12,16 @@ export default class AuthorizationSerializer extends JSONAPISerializer {
 
     const normalizedPayload = {
       data: {
+        type: "authorization",
         id: 'CLIENT_ORIGINATED',
-        access_token: access_token,
-        token_type: token_type,
-        expires_in: expires_in,
-        scope: scope,
-        jti: jti,
+        attributes: {
+          access_token: access_token,
+          token_type: token_type,
+          expires_in: expires_in,
+          scope: scope,
+          jti: jti,
+        }
+
       },
     };
 

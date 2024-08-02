@@ -11,4 +11,8 @@ Router.map(function () {
   this.route('accounts');
   this.route('dashboard');
   this.route('forgot-password');
+  this.route('rewards');
+  this.route('customer');
+  this.route('consumption');
+  this.route('premises');
 });

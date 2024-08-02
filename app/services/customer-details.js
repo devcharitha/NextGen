@@ -14,17 +14,15 @@ export default class CustomerDetailsService extends Service {
 
   getCustomerFullName() {
     if (this.customerDetails) {
-      const firstName = this.customerDetails.data.attributes.firstName;
-      const lastName = this.customerDetails.data.attributes.lastName;
+      const firstName = this.customerDetails.firstName;
+      const lastName = this.customerDetails.lastName;
       return `Mr. ${firstName} ${lastName}`;
     }
   }
 
   getAppliances() {
     return (
-      (this.customerDetails &&
-        this.customerDetails.data.attributes.list_of_appliances) ||
-      []
+      (this.customerDetails && this.customerDetails.list_of_appliances) || []
     );
   }
 }

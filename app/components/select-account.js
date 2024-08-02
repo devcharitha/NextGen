@@ -7,7 +7,10 @@ export default class SelectAccountComponent extends Component {
   @service token;
   @service router;
   @service customerDetails;
+  @service consumptionDetails;
+  @service activities;
   @service account;
+  @service store;
 
   @tracked selectedAccount = null;
   @tracked selectedPremise = null;
@@ -56,92 +59,61 @@ export default class SelectAccountComponent extends Component {
   }
 
   async getPremises() {
-    fetch(
-      `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/premises?accountNumber=${this.selectedAccount}`,
-      {
-        // headers: {
-        //   Authorization: `Bearer ${this.token.access_token}`,
-        //   'Content-Type': 'application/json',
-        // },
-      },
-    )
-      .then((response) => response.json())
-      .then((res) => {
-        if (!res) {
-          throw new Error('response is not ok', res);
-        }
-        this.premises =
-          res.data.attributes.premises.map((premise) => premise.premise) || [];
-        this.premiseId = res.data.attributes.premises[0]?.premiseId;
-        console.log('premise response:', res);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
+
+    try {
+      const response = await this.store.queryRecord('premises', { accountNumber: this.selectedAccount });
+      if (!response) {
+        throw new Error('Response is not ok');
+      }
+      this.premises = response.premises.map((premise) => premise.premise) || [];
+      console.log(this.premises)
+      this.premiseId = response.premises[0]?.premiseId;
+      console.log('Premise response:', response);
+    } catch (error) {
+      console.log('Error:', error);
+    }
+
   }
 
   async getCustomerDetails() {
-    fetch(
-      `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/${this.token.customerId}`,
-      {
-        headers: {
-          Authorization: `Bearer ${this.token.access_token}`,
-          'Content-Type': 'application/json',
-        },
-      },
-    )
-      .then((response) => response.json())
-      .then((res) => {
-        if (!res) {
-          throw new Error('response is not ok', res);
-        }
-        this.customerDetails.setCustomerDetails(res);
-        console.log('customer response:', res);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
+    try {
+      const response = await this.store.findRecord('customers', this.token.customerId)
+      if (!response) {
+        throw new Error('response is not ok', response);
+      }
+      this.customerDetails.setCustomerDetails(response);
+      console.log('customer response:', response);
+    }
+    catch (error) {
+      console.log('error', error);
+    }
   }
   async getRewards() {
-    fetch(
-      `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/rewards?customerId=${this.token.customerId}`,
-      {
-        // headers: {
-        //   Authorization: `Bearer ${this.token.access_token}`,
-        //   'Content-Type': 'application/json',
-        // },
-      },
-    )
-      .then((response) => response.json())
-      .then((res) => {
-        if (!res) {
-          throw new Error('response is not ok', res);
-        }
-        console.log('rewards response:', res);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
+    try {
+      let response = await this.store.queryRecord('rewards', { customerId: this.token.customerId })
+
+      if (!response) {
+        throw new Error('response is not ok', response);
+      }
+      this.activities.setActivities(response);
+      console.log('rewards response:', response);
+    }
+    catch (error) {
+      console.log('error', error);
+    }
   }
   async getComsumptionDetails() {
-    fetch(
-      `https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/customers/consumption?premiseId=${this.premiseId}`,
-      {
-        // headers: {
-        //   Authorization: `Bearer ${this.token.token}`,
-        //   'Content-Type': 'application/json',
-        // },
-      },
-    )
-      .then((response) => response.json())
-      .then((res) => {
-        if (!res) {
-          throw new Error('response is not ok', res);
-        }
-        console.log(' consumption response:', res);
-      })
-      .catch((error) => {
-        console.log('error', error);
-      });
+    try {
+      let response = await this.store.queryRecord('consumption', { premiseId: this.premiseId })
+
+      if (!response) {
+        throw new Error('response is not ok', response);
+      }
+      this.consumptionDetails.setConsumptionDetails(response);
+      console.log(' consumption response:', response);
+    }
+    catch (error) {
+      console.log('error', error);
+    }
   }
 }

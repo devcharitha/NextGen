@@ -4,11 +4,14 @@ export default class RewardsSerializer extends JSONAPISerializer {
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
     console.log('original payload', payload);
 
-    let activities = payload.jsonapi.data.activities;
+    const activities = payload.jsonapi.data.activities;
 
-    let customerId = payload.jsonapi.data.customerId;
+    const customerId = payload.jsonapi.data.customerId;
+    
+ 
 
-    let Adata = activities.map((activity, index) => {
+
+    const Adata = activities.map((activity) => {
       return {
         activityCompletionDate: activity.activityCompletionDate,
         activityName: activity.activityName,
@@ -17,11 +20,14 @@ export default class RewardsSerializer extends JSONAPISerializer {
         rewardsEarned: activity.rewardsEarned,
       };
     });
-    let normalizedPayload = {
+    const normalizedPayload = {
       data: {
-        id: activity.id || `activity-${index}`,
-        customerId: customerId,
-        activities: Adata,
+        id: '123',
+        type: 'rewards',
+        attributes: {
+          customerId: customerId,
+          activities: Adata,
+        },
       },
     };
     console.log('normalized payload', normalizedPayload);

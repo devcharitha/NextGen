@@ -2,10 +2,11 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
-// import * as jwt_decode from 'jwt-decode';
+
 export default class LoginFormComponent extends Component {
   @service router;
   @service token;
+  @service store;
   @tracked emailError;
   @tracked passwordError;
   @tracked email;
@@ -17,9 +18,16 @@ export default class LoginFormComponent extends Component {
     return emailPattern.test(email);
   }
 
+  validatePassword(password) {
+    const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,12}$/;
+    return passwordPattern.test(password);
+  }
+
   @action
   async signIn(event) {
     event.preventDefault();
+
+    this.errorMessage = '';
 
     if (!this.email && !this.password) {
       this.errorMessage = 'Enter the email and password';
@@ -27,8 +35,7 @@ export default class LoginFormComponent extends Component {
         this.errorMessage = '';
       }, 3000);
     } else if (!this.email) {
-      this.emailError = 'Enter an email ';
-
+      this.emailError = 'Enter the email ';
       setTimeout(() => {
         this.emailError = '';
       }, 3000);
@@ -42,44 +49,44 @@ export default class LoginFormComponent extends Component {
       setTimeout(() => {
         this.passwordError = '';
       }, 3000);
-    } else if (this.password.length < 6) {
-      this.passwordError = 'Invalid password';
+    } else if (!this.validatePassword(this.password)) {
+      this.passwordError = 'Invalid password format';
       setTimeout(() => {
         this.passwordError = '';
       }, 3000);
     } else {
       this.authenticateUser(this.email, this.password);
-      // this.router.transitionTo('accounts');
     }
   }
   async authenticateUser(email, password) {
-    const api =
-      'https://0t71wagdzi.execute-api.us-west-2.amazonaws.com/epic/authorization';
     try {
-      const response = await fetch(api, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
+      let response = this.store.createRecord('authorization', {
+        email: this.email,
+        password: this.password
       });
-      if (!response.ok) {
-        throw new Error('response is not ok', response);
-      }
-      const data = await response.json();
-      console.log('success', data);
+      const tokenResponse = await response.save();
+      console.log("tokenResponse", tokenResponse);
 
-      // const decodedToken = jwt_decode.default(data.token);
-      // console.log('Decoded token:',decodedToken);
-
-      const tokenParts = data.access_token.split('.');
+      const tokenParts = tokenResponse.access_token.split('.');
       const decodedToken = JSON.parse(atob(tokenParts[1]));
       console.log('Decoded token:', decodedToken);
 
-      this.token.setToken(data.access_token, decodedToken);
+      this.token.setToken(tokenResponse.access_token, decodedToken);
       this.router.transitionTo('accounts');
     } catch (error) {
       console.log('error', error);
+
+      if (error.errors && error.errors[0] && error.errors[0].detail) {
+        const errorMessage = JSON.parse(error.errors[0].detail).error.message;
+        if (errorMessage === 'Unauthorized') {
+          this.errorMessage = 'Invalid credentials';
+          setTimeout(() => {
+            this.errorMessage = '';
+          }, 3000);
+          return;
+        }
+      }
     }
   }
+
 }
