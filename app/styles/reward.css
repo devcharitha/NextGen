@@ -1,46 +1,17 @@
-/* .activity-heading {
-  background-color: rgb(10 180 219 / 88.6%);
-  border-radius: 8px 8px 0 0;
-} */
-
-.summary-heading {
-  background-color: rgb(10 180 219 / 88.6%);
-  border-radius: 7px 7px 0 0;
+.activities{
+  height: 2.8rem;
+  background-color: rgb(12, 65, 188);
+  border-radius: 3px;
+  color: white;
 }
 
-.details {
-  /* margin-left: 190px; */
-  text-align: end;
-  justify-content: end;
+.activites-wrap{
+  margin-top: -130px !important;
 }
 
-.badge {
-  color: black;
-}
-
-/* .point {
-  margin-left: 215px !important;
-} */
-
-/* .energy-point {
-  margin-left: 190px;
-} */
-
-.reward {
-  background-color: white;
-}
-
-.activities {
-  margin-top: -20%;
-  background-color: white;
-  border-radius: 7px;
-}
-
-.reward-wrap {
-  justify-content: space-between;
-}
-
-.Activity-header {
-  background-color: rgb(10 180 219 / 88.6%);
-  border-radius: 8px 8px 0 0;
+.block{
+  width: 3px;
+  height: 70px;
+  background-color: rgb(12, 65, 188);
+  border-radius: 2px;
 }

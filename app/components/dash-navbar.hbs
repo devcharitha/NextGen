@@ -1,14 +1,30 @@
-<nav class="dash-navbar navbar-expand-lg bg-body-white">
-    <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="user-img nav-item">
-                    <img src="/assets/images/user.svg" alt="">
-                </li>
-                <li class="logout-button nav-item">
-                    <LinkTo class="nav-link active" aria-current="page" @route="login">Logout</LinkTo>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+<div class="dash-navbar d-flex justify-content-between">
+  <div class="app-name">
+    <h4 class="app-title">NextGEN.</h4>
+  </div>
+  <div class="Account-button ">
+    <button class="support-button pb-1 ps-2 pe-2 rounded-2 me-2" {{on "click" this.support}}>
+      Support</button>
+      {{#if this.isSupportVisible}}
+      <div class="options">
+        <button class="profile-option">Technical Support</button>
+        <button class="profile-option">Toolset Support</button>
+      </div>
+      {{/if}}
+
+
+    <button class="profile-button ps-2 pe-2 rounded-2" {{on "click" this.dropdown}}>
+      <img
+        class="profile-image"
+        src="/assets/images/profile.svg"
+        height="30px"
+      />
+      Profile</button>
+    {{#if this.isDropdownVisible}}
+      <div class="options">
+        <button class="profile-option" {{on "click" this.switchButton}}>Account</button><br />
+        <button class="profile-option" {{on "click" this.logoutButton}}>Logout</button>
+      </div>
+    {{/if}}
+  </div>
+</div>
