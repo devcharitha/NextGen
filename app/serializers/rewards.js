@@ -7,6 +7,9 @@ export default class RewardsSerializer extends JSONAPISerializer {
     const activities = payload.jsonapi.data.activities;
 
     const customerId = payload.jsonapi.data.customerId;
+    
+ 
+
 
     const Adata = activities.map((activity) => {
       return {

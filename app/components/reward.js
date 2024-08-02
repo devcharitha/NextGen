@@ -1,11 +1,20 @@
 import Component from '@glimmer/component';
+import { inject as service } from '@ember/service';
 
 export default class RewardComponent extends Component {
-  activity = {
-    activityCompletionDate: '2024-05-31',
-    activityName: 'Quiz',
-    activityStartDate: '2024-05-21',
-    pointsEarned: '50',
-    rewardsEarned: '5',
-  };
+ @service activities;
+
+get items() {
+  const activities = this.activities.getActivities();
+  console.log("Items:", activities);
+  return activities;
+}
+
+ get totalPoints() {
+   return this.items.reduce((acc, item) => acc + parseInt(item.pointsEarned), 0);
+ }
+
+ get totalRewards() {
+   return this.items.reduce((acc, item) => acc + parseInt(item.rewardsEarned), 0);
+ }
 }

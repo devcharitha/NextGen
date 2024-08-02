@@ -7,6 +7,8 @@ export default class SelectAccountComponent extends Component {
   @service token;
   @service router;
   @service customerDetails;
+  // @service consumptionDetails;
+  @service activities;
   @service account;
   @service store;
 
@@ -93,6 +95,7 @@ export default class SelectAccountComponent extends Component {
       if (!response) {
         throw new Error('response is not ok', response);
       }
+      this.activities.setActivities(response);
       console.log('rewards response:', response);
     }
     catch (error) {
@@ -106,6 +109,7 @@ export default class SelectAccountComponent extends Component {
       if (!response) {
         throw new Error('response is not ok', response);
       }
+      // this.consumptionDetails.setConsumptionDetails(response);
       console.log(' consumption response:', response);
     }
     catch (error) {
