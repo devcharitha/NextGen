@@ -2,8 +2,9 @@ import JSONAPISerializer from '@ember-data/serializer/json';
 
 export default class ConsumptionSerializer extends JSONAPISerializer {
   normalizeResponse(store, primaryModelClass, payload, id, requestType) {
-    const premiseId = payload.jsonapi.data.premiseId;
-    const consumptionDetails = payload.jsonapi.data.consumptionDetails;
+    console.log("consumptionsss payload:",payload);
+    const premiseId = payload.data.attributes.premiseId;
+    const consumptionDetails = payload.data.attributes.consumptionDetails;
 
     const normalizedConsumption = consumptionDetails.map((detail) => ({
       billAmount: detail.billAmount,
